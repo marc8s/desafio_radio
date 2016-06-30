@@ -1,1 +1,1 @@
-<?php echo $texto ?>
+{{ $texto }}  

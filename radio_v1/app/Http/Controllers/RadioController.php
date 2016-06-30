@@ -17,7 +17,7 @@ class RadioController extends Controller
 		return view('welcome');
 	}
 	public function testarFuncionalidade(){
-		return view('testes', ['texto'=> "Hello World Testes"]);
+		return view('testes', ['texto'=> "Hello World Testes blade"]);
 	}
 	
 	/*public function getIndex(){
