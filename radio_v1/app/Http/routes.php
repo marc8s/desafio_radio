@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/programacao', 'RadioController@exibirProgramacao');
 Route::get('/welcome', 'RadioController@irParaHome');
+Route::get('/testes', 'RadioController@testarFuncionalidade');
 
 /*Route::get('/programacao.blade.php', function () {
     return view('programacao');
