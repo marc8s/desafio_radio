@@ -38,8 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Radio</div>
-				<a href="programacao.blade.php">Programação</a>						
+                <div class="title">Programação</div>
+				<a href="welcome.blade.php">Voltar</a>
             </div>
         </div>
 		

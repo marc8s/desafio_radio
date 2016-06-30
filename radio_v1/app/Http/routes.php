@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/programacao.blade.php', function () {
+    return view('programacao');
+});
+
+Route::get('/welcome.blade.php', function () {
+    return view('welcome');
+});
