@@ -1,0 +1,13 @@
+{
+    "name": "Radio",
+    "description": "Site para uma radio com radialistas, programas e programação",
+    "authors": [
+        {
+            "name": "Marc8s",
+            "email": "marcus.ecomp@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8"
+    }
+}
