@@ -8,5 +8,7 @@ use App\Http\Requests;
 
 class RadioController extends Controller
 {
-    //
+    public function index(){
+		echo "Hello controller";
+	}
 }
