@@ -39,7 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Programação</div>
-				<a href="welcome.blade.php">Voltar</a>
+				<a href="welcome">Voltar</a>
             </div>
         </div>
 		

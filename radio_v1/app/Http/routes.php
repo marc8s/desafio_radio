@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/usuarios', 'RadioController@index');
+//Route::controller('usuarios', 'RadioController');
+
+Route::get('/programacao', 'RadioController@exibirProgramacao');
+Route::get('/welcome', 'RadioController@irParaHome');
 
 /*Route::get('/programacao.blade.php', function () {
     return view('programacao');
