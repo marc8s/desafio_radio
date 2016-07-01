@@ -1,15 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-//use Illuminate\Http\Request;
-
-//use App\Http\Requests;
+use DB;
 
 class ProgramasController extends Controller
 {
     //lista todos os programas
 	public function getIndex(){
+		$programas = DB::table('programas')->get();
+		dd($programas);
 		return view('indexProgramas');
 	}	
 	//formulário de criação do programa
@@ -21,21 +20,25 @@ class ProgramasController extends Controller
 		
 	}
 	//mostra um programa especifico
-	public function getShow($id){
-		return "Mostra o programa -> {$id}";
+	public function getShow($idProg){
+		return "Mostra o programa -> {$idProg}";
 	}
 	//carregar um programa especifico pra edição
-	public function getEdit($id){
-		return view('create-editPrograma');
+	public function getEdit($idProg){
+		return view('create-editPrograma', ['idProg' => $idProg]);
 	}
 	//alterar um programa especifico 
-	public function update(Request $request, $id){
+	public function update(Request $request, $idProg){
 		
 	}
 	//deletar um programa especifico 
-	public function destroy($id){
+	public function getDestroy($idProg){
 		
 	}
+	public function missingMethod($params = array()){
+		return view('erro404');
+	}
+	
 	public function exibirProgramacao(){		
 		return view('programacao');
 	}
