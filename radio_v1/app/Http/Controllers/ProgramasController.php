@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class RadioController extends Controller
+class ProgramasController extends Controller
 {
     public function exibirProgramacao(){		
 		return view('programacao');

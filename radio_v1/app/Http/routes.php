@@ -15,16 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::controller('usuarios', 'RadioController');
+Route::get('/programacao', 'ProgramasController@exibirProgramacao');
+Route::get('/welcome', 'ProgramasController@irParaHome');
+Route::get('/testes', 'ProgramasController@testarFuncionalidade');
 
-Route::get('/programacao', 'RadioController@exibirProgramacao');
-Route::get('/welcome', 'RadioController@irParaHome');
-Route::get('/testes', 'RadioController@testarFuncionalidade');
 
-/*Route::get('/programacao.blade.php', function () {
-    return view('programacao');
-});
-
-Route::get('/welcome.blade.php', function () {
-    return view('welcome');
-});*/
