@@ -1,4 +1,4 @@
-<h1>Programação</h1>
+<h1>Programas</h1>
 
 @forelse($programas as $programa)
 	<p>

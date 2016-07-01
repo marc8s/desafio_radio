@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use DB;
 
 class RadialistasController extends Controller
 {
-    //
+    //lista todos os radialistas
+	public function getIndex(){
+		$programas = DB::table('programas')->get();		
+		return view('indexRadialistas', compact('programas'));
+	}	
 }
