@@ -15,11 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('programacao', 'ProgramasController@index');
-Route::get('programacao/createPrograma', 'ProgramasController@create');
-Route::post('programacao/createPrograma', 'ProgramasController@store');
-Route::get('programacao/{idProg}', 'ProgramasController@show'); //separa os parametros com barra e dentro de chaves
-Route::get('programacao/edit/{idProg}', 'ProgramasController@edit');
+Route::controller('/programacao', 'ProgramasController');
 
 Route::get('/welcome', 'ProgramasController@irParaHome');
 Route::get('/testes', 'ProgramasController@testarFuncionalidade');

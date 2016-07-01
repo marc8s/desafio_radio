@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
-use App\Http\Requests;
+//use App\Http\Requests;
 
 class ProgramasController extends Controller
 {
     //lista todos os programas
-	public function index(){
+	public function getIndex(){
 		return view('indexProgramas');
 	}	
 	//formulário de criação do programa
-	public function create(){
+	public function getCreate(){
 		return view('create-editPrograma');
 	}
 	//armazena o programa
@@ -21,11 +21,11 @@ class ProgramasController extends Controller
 		
 	}
 	//mostra um programa especifico
-	public function show($id){
+	public function getShow($id){
 		return "Mostra o programa -> {$id}";
 	}
 	//carregar um programa especifico pra edição
-	public function edit($id){
+	public function getEdit($id){
 		return view('create-editPrograma');
 	}
 	//alterar um programa especifico 
