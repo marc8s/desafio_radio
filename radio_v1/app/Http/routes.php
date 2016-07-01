@@ -17,6 +17,5 @@ Route::get('/', function () {
 
 Route::controller('/programas', 'ProgramasController');
 Route::controller('/radialistas', 'RadialistasController');
-
-Route::get('/welcome', 'ProgramasController@irParaHome');
+Route::controller('/programacao', 'ProgramacaoController');
 
