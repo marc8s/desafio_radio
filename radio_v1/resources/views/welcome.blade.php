@@ -8,9 +8,7 @@
                 <div class="panel-heading">Radio</div>
 
                 <div class="panel-body">
-                    <a href="programas">Programas</a><br/>
-					<a href="radialistas">Radialistas</a><br/>
-					<a href="programacao">Programação</a><br/>
+                    Bem-vindo.
                 </div>
             </div>
         </div>
