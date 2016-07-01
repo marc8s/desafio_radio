@@ -10,11 +10,11 @@ class ProgramasController extends Controller
 {
     //lista todos os programas
 	public function index(){
-		
-	}
+		return view('indexProgramas');
+	}	
 	//formulário de criação do programa
 	public function create(){
-		
+		return view('create-editPrograma');
 	}
 	//armazena o programa
 	public function store(){
@@ -22,11 +22,11 @@ class ProgramasController extends Controller
 	}
 	//mostra um programa especifico
 	public function show($id){
-		
+		return "Mostra o programa -> {$id}";
 	}
 	//carregar um programa especifico pra edição
 	public function edit($id){
-		
+		return view('create-editPrograma');
 	}
 	//alterar um programa especifico 
 	public function update(Request $request, $id){

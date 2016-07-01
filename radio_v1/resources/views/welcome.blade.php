@@ -39,7 +39,8 @@
         <div class="container">
             <div class="content">
                 <div class="title">Radio</div>
-				<a href="programacao">Programação</a>						
+				<a href="programacao">Programação</a><br/>	
+				<a href="radialistas">Radialistas</a><br/>	
             </div>
         </div>
 		
