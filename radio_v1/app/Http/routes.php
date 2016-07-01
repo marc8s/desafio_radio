@@ -18,6 +18,4 @@ Route::get('/', function () {
 Route::controller('/programacao', 'ProgramasController');
 
 Route::get('/welcome', 'ProgramasController@irParaHome');
-Route::get('/testes', 'ProgramasController@testarFuncionalidade');
-
 

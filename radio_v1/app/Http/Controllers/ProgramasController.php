@@ -38,17 +38,3 @@ class ProgramasController extends Controller
 		return view('erro404');
 	}
 	
-	public function exibirProgramacao(){		
-		return view('programacao');
-	}
-	public function irParaHome(){		
-		return view('welcome');
-	}
-	public function testarFuncionalidade(){
-		return view('testes', [
-			'titulo'=> "Programação",
-			'checagem' => true,
-			'programas' => ['p1', 'p2', 'p3', 'p4']
-		]);
-	}	
-}
