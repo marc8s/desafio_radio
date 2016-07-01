@@ -5,5 +5,5 @@
 		<b>Programa:</b> {{$programa -> nome}}
 	</p>
 @empty	
-	<p>Nenhum programa na programação!</p>
+	<p>Nenhum programa cadastrado!</p>
 @endforelse

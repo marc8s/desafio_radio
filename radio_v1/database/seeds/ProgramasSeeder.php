@@ -23,6 +23,12 @@ class ProgramasSeeder extends Seeder
 				'horario' => '10:00',
 				'descricao' => 'Ótimas receitas para o seu almoço.',
 				'radialista' => 'Ric Detox'
+			],
+			2 => [
+				'nome' => 'Bate bola',
+				'horario' => '12:00',
+				'descricao' => 'Esportes.',
+				'radialista' => 'Adnoel San'
 			]
 						
 		];
