@@ -5,12 +5,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Radio</div>
+                <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <a href="programas">Programas</a><br/>
-					<a href="radialistas">Radialistas</a><br/>
-					<a href="programacao">Programação</a><br/>
+                    You are logged in!
                 </div>
             </div>
         </div>

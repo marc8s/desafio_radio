@@ -19,3 +19,7 @@ Route::controller('/programas', 'ProgramasController');
 Route::controller('/radialistas', 'RadialistasController');
 Route::controller('/programacao', 'ProgramacaoController');
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
