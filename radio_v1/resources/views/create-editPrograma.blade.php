@@ -2,4 +2,6 @@
 
 @if(isset($idProg))
 	<p>Exibe o programa {{$idProg}}</p>
+@else
+	<p>novo</p>
 @endif
