@@ -37,4 +37,5 @@ class ProgramasController extends Controller
 	public function missingMethod($params = array()){
 		return view('erro404');
 	}
-	
+		
+}
