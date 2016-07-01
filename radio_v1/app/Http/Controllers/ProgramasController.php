@@ -7,9 +7,8 @@ class ProgramasController extends Controller
 {
     //lista todos os programas
 	public function getIndex(){
-		$programas = DB::table('programas')->get();
-		dd($programas);
-		return view('indexProgramas');
+		$programas = DB::table('programas')->get();		
+		return view('indexProgramas', compact('programas'));
 	}	
 	//formulário de criação do programa
 	public function getCreate(){
