@@ -11,15 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::controller('/programas', 'ProgramasController');
 Route::controller('/radialistas', 'RadialistasController');
 Route::controller('/programacao', 'ProgramacaoController');
 
-
+Route::get('/', 'HomeController@index');
 Route::auth();
-
 Route::get('/home', 'HomeController@index');
