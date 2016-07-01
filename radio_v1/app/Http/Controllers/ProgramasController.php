@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use DB;
+use App\Programa;
 
 class ProgramasController extends Controller
 {
     //lista todos os programas
 	public function getIndex(){
-		$programas = DB::table('programas')->get();		
+		$programas = Programa::get();
+		//DB::table('programas')->get();		
 		return view('indexProgramas', compact('programas'));
 	}	
 	//formulário de criação do programa
