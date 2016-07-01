@@ -1,8 +1,8 @@
 <h1>Radialistas</h1>
 
-@forelse($programas as $programa)
+@forelse($radialistas as $radialista)
 	<p>
-		<b>Radialista:</b> {{$programa -> radialista}}
+		<b>Radialista:</b> {{$radialista -> radialista}}
 	</p>
 @empty	
 	<p>Nenhum radialista cadastrado!</p>
