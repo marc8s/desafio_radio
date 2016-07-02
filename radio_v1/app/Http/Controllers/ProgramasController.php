@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Programa;
+use Illuminate\Http\Request;
 
 class ProgramasController extends Controller
 {
@@ -17,8 +18,11 @@ class ProgramasController extends Controller
 		return view('create-editPrograma');
 	}
 	//armazena o programa
-	public function postStore(){
-		return 'Salvando...';
+	public function postStore(Request $request){
+		$programa = new Programa();
+		$programa = $programa -> create($request->all());
+		//var_dump($request);
+		return $programa;
 	}
 	//mostra um programa especifico
 	public function getShow($idProg){
