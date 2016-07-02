@@ -21,6 +21,9 @@
 					
 					<p>Nome do programa: {{$programa-> nome}}</p><br/>
 					
+					<!--{{Form::input('text', 'idprograma', $programa-> id, ['class' => 'form-control'])}}-->
+					{{ Form::hidden('idprograma', $programa-> id) }}
+					
 					{{Form::label('dia', 'Dia')}}
 					{{Form::input('text', 'dia', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Dia do Programa'])}}
 					
