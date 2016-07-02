@@ -17,8 +17,8 @@ class ProgramasController extends Controller
 		return view('create-editPrograma');
 	}
 	//armazena o programa
-	public function store(){
-		
+	public function postStore(){
+		return 'Salvando...';
 	}
 	//mostra um programa especifico
 	public function getShow($idProg){

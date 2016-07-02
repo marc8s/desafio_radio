@@ -12,8 +12,16 @@
                     @if(isset($idProg))
 						<p>Exibe o programa {{$idProg}}</p>
 					@else						
-						{{ Form::open() }}
-							{{Form::input('text', 'nome', '')}}
+						{{ Form::open(['url' => 'programas/store']) }}
+					
+						{{Form::label('nome', 'Nome')}}
+						{{Form::input('text', 'nome', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Programa'])}}
+						
+						{{Form::label('descricao', 'Descrição')}}
+						{{Form::input('text', 'descricao', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Descrição do Programa'])}}
+						
+						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
+						
 						{{ Form::close() }}
 					@endif
                 </div>
