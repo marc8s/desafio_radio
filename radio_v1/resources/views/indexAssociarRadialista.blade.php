@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Radialistas {{$id}}
+					Radialistas 
 					<a href="radialistas/create" class="pull-right">Novo Radialista</a><br/>
 				</div>
 
@@ -22,7 +22,7 @@
 							<tr>
 								<td>{{$radialista -> nome}}</td>								
 								<td>									
-									<a href="radialistas/createAssociacao/{{ $radialista-> id }}" class="btn btn-default btn-sm">Adicionar a Programação</a>
+									<a href="escalaradialista/create/{{$idprogramacao}}/{{ $radialista-> id }}" class="btn btn-default btn-sm">Adicionar a Programação</a>
 									<a href="radialistas/edit/{{ $radialista-> id }}" class="btn btn-default btn-sm">Editar</a>
 									{{ Form::open(['method'=>'DELETE', 'url' => 'radialistas/destroy/'.$radialista-> id, 'style' => 'display: inline;']) }}
 									<button type="submit" class="btn btn-sm">Excluir</button>		
