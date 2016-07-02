@@ -9,9 +9,14 @@
 					Formulário de gestão de programa						
 				</div>				
                 <div class="panel-body">
+					
                     @if(isset($idProg))
 						<p>Exibe o programa {{$idProg}}</p>
-					@else						
+					@else	
+						@if(Session::has('mensagem_sucesso'))
+							<div class="alert alert-sucess">{{Session::get('mensagem_sucesso')}}</div>
+						@endif
+						
 						{{ Form::open(['url' => 'programas/store']) }}
 					
 						{{Form::label('nome', 'Nome')}}

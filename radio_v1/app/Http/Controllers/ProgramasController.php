@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Programa;
 use Illuminate\Http\Request;
+use Redirect;
 
 class ProgramasController extends Controller
 {
@@ -22,7 +23,10 @@ class ProgramasController extends Controller
 		$programa = new Programa();
 		$programa = $programa -> create($request->all());
 		//var_dump($request);
-		return $programa;
+		//return $programa;
+		\Session::flash('mensagem_sucesso', 'Programa cadastrado com sucesso!');
+		
+		return Redirect::to('programas/create');
 	}
 	//mostra um programa especifico
 	public function getShow($idProg){
