@@ -11,13 +11,23 @@
 				</div>
 
                 <div class="panel-body">
-                    @forelse($programas as $programa)
-						<p>
-							<b>Programa:</b> {{$programa -> nome}} <a href="#">Adicionar a Programação</a><br/>
-						</p> 	
-					@empty	
-						<p>Nenhum programa cadastrado!</p>
-					@endforelse
+					<table class="table">
+						<th>Nome</th>
+						<th>Descrição</th>
+						<th>Ação</th>
+						<tbody>
+							@forelse($programas as $programa)
+							<tr>
+								<td>{{$programa -> nome}}</td>
+								<td>{{$programa -> descricao}}</td>
+								<td><a href="#">Adicionar a Programação</a></td>									
+							</tr>
+							@empty	
+							<p>Nenhum programa cadastrado!</p>							
+							@endforelse
+						</tbody>
+					</table>
+                    
 						
 					
                 </div>
