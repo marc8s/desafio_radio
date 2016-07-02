@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Programacao;
+use App\Programa;
 use Illuminate\Http\Request;
 use Redirect;
 
@@ -14,8 +15,9 @@ class ProgramacaoController extends Controller
 		return view('indexProgramacao', compact('programacaos'));
 	}	
 	//formulário de criação 
-	public function getCreate(){
-		return view('create-editProgramacao');
+	public function getCreate($id){
+		$programa = Programa::findOrFail($id);
+		return view('create-editProgramacao', ['programa' => $programa]);
 	}
 	//armazena 
 	public function postStore(Request $request){

@@ -24,7 +24,7 @@
 								<td>{{$programa -> nome}}</td>
 								<td>{{$programa -> descricao}}</td>
 								<td>									
-									<button class="btn btn-sm">Adicionar a Programação</button>
+									<a href="programacao/create/{{ $programa-> id }}" class="btn btn-default btn-sm">Adicionar a Programação</a>
 									<a href="programas/edit/{{ $programa-> id }}" class="btn btn-default btn-sm">Editar</a>
 									{{ Form::open(['method'=>'DELETE', 'url' => 'programas/destroy/'.$programa-> id, 'style' => 'display: inline;']) }}
 									<button type="submit" class="btn btn-sm">Excluir</button>		
