@@ -25,29 +25,31 @@ class ProgramacaoController extends Controller
 		$programacao = new Programacao();
 		$programacao = $programacao -> create($request->all());		
 		\Session::flash('mensagem_sucesso', 'Programação atualizada com sucesso!');		
-		return Redirect::to('programacao/create');
+		return Redirect::to('programacao');
 	}
 	//mostra 
 	public function getShow($id){
 		return "Mostra a programacao -> {$id}";
 	}
 	//carregar uma programacao pra edição
-	public function getEdit($id){
-		$programacao = Programacao::findOrFail($id);		
-		return view('create-editProgramacao', ['programacao' => $programacao]);
+	public function getEdit($id, $idprograma){
+		$programacao = Programacao::findOrFail($id);
+		$programa = Programa::findOrFail($idprograma);	
+		return view('create-editProgramacao', compact('programacao', 'programa'));		
+		//return view('create-editProgramacao', ['programacao' => $programacao]);
 	}
 	//alterar 
 	public function patchUpdate($id, Request $request){
 		$programacao = Programacao::findOrFail($id);
 		$programacao->update($request->all());
 		\Session::flash('mensagem_sucesso', 'Programacao atualizada com sucesso!');
-		return Redirect::to('programacao/edit/'.$programacao->id);
+		return Redirect::to('programacao');
 	}
 	//deletar um programa especifico 
 	public function deleteDestroy($id){
 		$programacao = Programacao::findOrFail($id);
 		$programacao->delete();
-		\Session::flash('mensagem_sucesso', 'Programacao deletada com sucesso!');
+		\Session::flash('mensagem_sucesso', 'Programa removido da programação!');
 		return Redirect::to('programacao');
 	}
 	public function missingMethod($params = array()){
