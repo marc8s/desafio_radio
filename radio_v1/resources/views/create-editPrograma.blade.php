@@ -11,8 +11,10 @@
                 <div class="panel-body">
                     @if(isset($idProg))
 						<p>Exibe o programa {{$idProg}}</p>
-					@else
-						<p>novo</p>
+					@else						
+						{{ Form::open() }}
+							{{Form::input('text', 'nome', '')}}
+						{{ Form::close() }}
 					@endif
                 </div>
             </div>
