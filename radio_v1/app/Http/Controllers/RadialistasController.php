@@ -47,6 +47,12 @@ class RadialistasController extends Controller
 		\Session::flash('mensagem_sucesso', 'Radialista deletado com sucesso!');
 		return Redirect::to('radialistas');
 	}
+	
+	//associar a uma programacao
+	public function getAssociar($id){
+		$radialistas = Radialista::get();			
+		return view('indexAssociarRadialista', compact('radialistas'));
+	}
 	public function missingMethod($params = array()){
 		return view('erro404');
 	}

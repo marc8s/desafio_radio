@@ -21,8 +21,8 @@
 							@forelse($radialistas as $radialista)
 							<tr>
 								<td>{{$radialista -> nome}}</td>								
-								<td>					
-									
+								<td>									
+									<button class="btn btn-sm">Adicionar a Programação</button>
 									<a href="radialistas/edit/{{ $radialista-> id }}" class="btn btn-default btn-sm">Editar</a>
 									{{ Form::open(['method'=>'DELETE', 'url' => 'radialistas/destroy/'.$radialista-> id, 'style' => 'display: inline;']) }}
 									<button type="submit" class="btn btn-sm">Excluir</button>		
