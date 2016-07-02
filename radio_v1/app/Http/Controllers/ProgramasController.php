@@ -35,7 +35,7 @@ class ProgramasController extends Controller
 	//carregar um programa especifico pra edição
 	public function getEdit($idProg){
 		$programa = Programa::findOrFail($idProg);
-		return view('create-editPrograma', ['idProg' => $idProg]);
+		return view('create-editPrograma', ['programa' => $programa]);
 	}
 	//alterar um programa especifico 
 	public function update(Request $request, $idProg){

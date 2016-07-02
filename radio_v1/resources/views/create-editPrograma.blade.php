@@ -9,26 +9,26 @@
 					Formulário de gestão de programa						
 				</div>				
                 <div class="panel-body">
-					
-                    @if(isset($idProg))
-						<p>Exibe o programa {{$idProg}}</p>
-					@else	
-						@if(Session::has('mensagem_sucesso'))
-							<div class="alert alert-sucess">{{Session::get('mensagem_sucesso')}}</div>
-						@endif
-						
-						{{ Form::open(['url' => 'programas/store']) }}
-					
-						{{Form::label('nome', 'Nome')}}
-						{{Form::input('text', 'nome', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Programa'])}}
-						
-						{{Form::label('descricao', 'Descrição')}}
-						{{Form::input('text', 'descricao', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Descrição do Programa'])}}
-						
-						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
-						
-						{{ Form::close() }}
+					@if(Session::has('mensagem_sucesso'))
+						<div class="alert alert-sucess">{{Session::get('mensagem_sucesso')}}</div>
 					@endif
+					
+					@if(Request::is("programas/edit/*"))
+						{{Form::model($programa, [ 'method' => 'PATCH', 'url' => 'programas/update'])}}
+					@else
+						{{ Form::open(['url' => 'programas/store']) }}
+					@endif					
+					
+					{{Form::label('nome', 'Nome')}}
+					{{Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Programa'])}}
+						
+					{{Form::label('descricao', 'Descrição')}}
+					{{Form::input('text', 'descricao', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Descrição do Programa'])}}
+						
+					{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
+						
+					{{ Form::close() }}
+					
                 </div>
             </div>
         </div>
