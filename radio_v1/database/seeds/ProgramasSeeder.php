@@ -22,7 +22,7 @@ class ProgramasSeeder extends Seeder
 			],
 			2 => [
 				'nome' => 'Bate bola',
-				'descricao' => 'Esportes.''
+				'descricao' => 'Esportes.'
 			]
 						
 		];
