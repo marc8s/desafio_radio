@@ -14,13 +14,17 @@
 					<table class="table">
 						<th>Nome</th>
 						<th>Descrição</th>
-						<th>Ação</th>
+						<th>Ações</th>
 						<tbody>
 							@forelse($programas as $programa)
 							<tr>
 								<td>{{$programa -> nome}}</td>
 								<td>{{$programa -> descricao}}</td>
-								<td><a href="#">Adicionar a Programação</a></td>									
+								<td>									
+									<button class="btn btn-sm">Adicionar a Programação</button>
+									<a href="programas/edit/{{ $programa-> id }}" class="btn btn-default btn-sm">Editar</a>
+									<button class="btn btn-sm">Excluir</button>									
+								</td>									
 							</tr>
 							@empty	
 							<p>Nenhum programa cadastrado!</p>							
