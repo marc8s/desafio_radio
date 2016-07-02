@@ -11,8 +11,9 @@ class ProgramacaoController extends Controller
 {
     //lista programacao
 	public function getIndex(){
-		$programacaos = Programacao::get();			
-		return view('indexProgramacao', compact('programacaos'));
+		$programacaos = Programacao::get();	
+		$programas = Programa::get();			
+		return view('indexProgramacao', compact('programacaos', 'programas'));
 	}	
 	//formulário de criação 
 	public function getCreate($id){

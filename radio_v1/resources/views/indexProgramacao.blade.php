@@ -18,8 +18,15 @@
 						<th>Ações</th>
 						<tbody>
 							@forelse($programacaos as $programacao)
+							<?php $idprograma_programacao = $programacao -> idprograma; ?>
+								@foreach($programas as $programa)
+								<?php $idprograma = $programa -> id; ?>
+									@if($idprograma_programacao == $idprograma)
+										<?php $nome = $programa -> nome; ?>
+									@endif
+								@endforeach
 							<tr>
-								<td>{{$programacao -> nome}}</td>	
+								<td>{{$nome}}</td>	
 								<td>{{$programacao -> horario}}</td>	
 								<td>								
 									<a href="programacao/edit/{{ $programacao-> id }}" class="btn btn-default btn-sm">Editar</a>
