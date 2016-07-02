@@ -17,13 +17,13 @@
 						<th>Horário</th>	
 						<th>Ações</th>
 						<tbody>
-							@forelse($programacao as $programaescalado)
+							@forelse($programacaos as $programacao)
 							<tr>
-								<td>{{$programaescalado -> nome}}</td>	
-								<td>{{$programaescalado -> horario}}</td>	
+								<td>{{$programacao -> nome}}</td>	
+								<td>{{$programacao -> horario}}</td>	
 								<td>								
-									<a href="programacao/edit/{{ $programaescalado-> id }}" class="btn btn-default btn-sm">Editar</a>
-									{{ Form::open(['method'=>'DELETE', 'url' => 'programacao/destroy/'.$programaescalado-> id, 'style' => 'display: inline;']) }}
+									<a href="programacao/edit/{{ $programacao-> id }}" class="btn btn-default btn-sm">Editar</a>
+									{{ Form::open(['method'=>'DELETE', 'url' => 'programacao/destroy/'.$programacao-> id, 'style' => 'display: inline;']) }}
 									<button type="submit" class="btn btn-sm">Remover da Programação</button>		
 									{{ Form::close() }}
 								</td>									

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProgramacaoTabela extends Migration
+class CreateProgramacaosTabela extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProgramacaoTabela extends Migration
      */
     public function up()
     {
-        Schema::create('programacao', function (Blueprint $table) {
+        Schema::create('programacaos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('dia'); 
 			$table->integer('idprograma');
@@ -29,6 +29,6 @@ class CreateProgramacaoTabela extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programacao');
+        Schema::dropIfExists('programacaos');
     }
 }
