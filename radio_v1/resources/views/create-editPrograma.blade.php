@@ -14,7 +14,7 @@
 					@endif
 					
 					@if(Request::is("programas/edit/*"))
-						{{Form::model($programa, [ 'method' => 'PATCH', 'url' => 'programas/update'])}}
+						{{Form::model($programa, [ 'method' => 'PATCH', 'url' => 'programas/update/'.$programa->id])}}
 					@else
 						{{ Form::open(['url' => 'programas/store']) }}
 					@endif					

@@ -29,17 +29,19 @@ class ProgramasController extends Controller
 		return Redirect::to('programas/create');
 	}
 	//mostra um programa especifico
-	public function getShow($idProg){
-		return "Mostra o programa -> {$idProg}";
+	public function getShow($id){
+		return "Mostra o programa -> {$id}";
 	}
 	//carregar um programa especifico pra edição
-	public function getEdit($idProg){
-		$programa = Programa::findOrFail($idProg);
+	public function getEdit($id){
+		$programa = Programa::findOrFail($id);
 		return view('create-editPrograma', ['programa' => $programa]);
 	}
 	//alterar um programa especifico 
-	public function update(Request $request, $idProg){
-		
+	public function patchUpdate($id, Request $request){
+		$programa = Programa::findOrFail($id);
+		$programa->update($request->all());
+		return Redirect::to('programas/edit/'.$programa->id);
 	}
 	//deletar um programa especifico 
 	public function getDestroy($idProg){
