@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Radialista;
+use App\Programacao;
 use Illuminate\Http\Request;
 use Redirect;
 
@@ -49,9 +50,9 @@ class RadialistasController extends Controller
 	}
 	
 	//associar a uma programacao
-	public function getAssociar($id){
+	public function getAssociar($id){		
 		$radialistas = Radialista::get();			
-		return view('indexAssociarRadialista', compact('radialistas'));
+		return view('indexAssociarRadialista', compact('radialistas', 'id'));
 	}
 	public function missingMethod($params = array()){
 		return view('erro404');

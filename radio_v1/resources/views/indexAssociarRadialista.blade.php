@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Radialistas 
+					Radialistas {{$id}}
 					<a href="radialistas/create" class="pull-right">Novo Radialista</a><br/>
 				</div>
 
