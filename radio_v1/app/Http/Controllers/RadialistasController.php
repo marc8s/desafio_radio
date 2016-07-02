@@ -14,11 +14,7 @@ class RadialistasController extends Controller
 		$radialistas = Radialista::get();			
 		return view('indexRadialistas', compact('radialistas'));
 	}	
-	//associar a uma programacao
-	public function getAssociar($id){		
-		$radialistas = Radialista::get();			
-		return view('indexAssociarRadialista', compact('radialistas', 'id'));
-	}
+	
 	//formulário de criação do radialista
 	public function getCreate(){
 		return view('create-editRadialista');

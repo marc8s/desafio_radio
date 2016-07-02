@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::controller('/programas', 'ProgramasController');
 Route::controller('/radialistas', 'RadialistasController');
 Route::controller('/programacao', 'ProgramacaoController');
+Route::controller('/escalaradialista', 'EscalaRadialistasController');
 
 //Route::get('/', 'HomeController@index');
 Route::auth();
