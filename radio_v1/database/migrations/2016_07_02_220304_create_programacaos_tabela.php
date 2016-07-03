@@ -15,8 +15,7 @@ class CreateProgramacaosTabela extends Migration
         Schema::create('programacaos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('dia'); 
-			$table->integer('idprograma');
-			$table->integer('idradialista');
+			$table->integer('idprograma');			
 			$table->time('horario');
             $table->timestamps();
         });
