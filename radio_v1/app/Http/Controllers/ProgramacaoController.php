@@ -13,7 +13,8 @@ class ProgramacaoController extends Controller
 {
     //lista programacao
 	public function getIndex(){
-		$programacaos = Programacao::get();	
+		$programacaos = Programacao::orderBy('horario', 'asc')->get();
+		//$programacaos = Programacao::get();	
 		$programas = Programa::get();
 		$radialistas = Radialista::get();
 		$escalacao = EscalaRadialistas::get();
