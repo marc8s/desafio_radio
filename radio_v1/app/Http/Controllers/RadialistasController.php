@@ -15,17 +15,6 @@ class RadialistasController extends Controller
 		$radialistas = Radialista::get();			
 		return view('indexRadialistas', compact('radialistas'));
 	}	
-	public function getListar($idprogramacao, $idprograma){		
-		$radialistas = Radialista::get();		
-		return view('indexRadialistas', compact('radialistas', 'idprogramacao', 'idprograma'));
-	}
-	public function getAssociar($idprogramacao, $idprograma, $idradialista){		
-		$programacao = Programacao::findOrFail($idprogramacao);
-		$programa = Programa::findOrFail($idprograma);
-		$radialista = Radialista::findOrFail($idradialista);
-		return view('create-editRadialista', compact('programacao', 'programa', 'radialista'));
-		//return Redirect::to('radialistas/create', compact('programacao', 'programa', 'radialista'));
-	}
 	
 	//formulário de criação do radialista
 	public function getCreate(){
@@ -60,8 +49,7 @@ class RadialistasController extends Controller
 		$radialista->delete();
 		\Session::flash('mensagem_sucesso', 'Radialista deletado com sucesso!');
 		return Redirect::to('radialistas');
-	}
-	
+	}	
 	
 	public function missingMethod($params = array()){
 		return view('erro404');

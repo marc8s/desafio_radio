@@ -13,10 +13,12 @@
 						<div class="alert alert-sucess">{{Session::get('mensagem_sucesso')}}</div>
 					@endif
 					
-					@if(Request::is("radialistas/associar/*"))
+					@if(Request::is("escalaradialista/*"))
 						<p>Nome do programa: {{$programa-> nome}}</p><br/>
 						<p>Nome do radialista: {{$radialista-> nome}}</p><br/>
 						<p>Horario da programacao: {{$programacao-> horario}}</p><br/>
+						
+						
 					@else
 						@if(Request::is("radialistas/edit/*"))
 							{{Form::model($radialista, [ 'method' => 'PATCH', 'url' => 'radialistas/update/'.$radialista->id])}}
