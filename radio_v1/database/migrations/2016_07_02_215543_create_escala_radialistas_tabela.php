@@ -12,7 +12,7 @@ class CreateEscalaradialistasTabela extends Migration
      */
     public function up()
     {
-        Schema::create('escalaradialistas', function (Blueprint $table) {
+        Schema::create('escala_radialistas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idprogramacao');			
             $table->integer('idradialista');			
@@ -27,6 +27,6 @@ class CreateEscalaradialistasTabela extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('escalaradialistas');
+        Schema::dropIfExists('escala_radialistas');
     }
 }

@@ -5,6 +5,7 @@ use DB;
 use App\Radialista;
 use App\Programacao;
 use App\Programa;
+use App\EscalaRadialistas;
 use Illuminate\Http\Request;
 use Redirect;
 
@@ -22,6 +23,11 @@ class EscalaRadialistasController extends Controller
 		$radialista = Radialista::findOrFail($idradialista);
 		return view('create-editRadialista', compact('programacao', 'programa', 'radialista'));		
 	}
-	
+	public function postStore(Request $request){
+		$escala = new EscalaRadialistas();
+		$escala = $escala -> create($request->all());		
+		\Session::flash('mensagem_sucesso', 'Radialista escalado na programacao!');		
+		return Redirect::to('programacao');
+	}
 	
 }

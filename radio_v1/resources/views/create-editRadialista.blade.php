@@ -18,7 +18,13 @@
 						<p>Nome do radialista: {{$radialista-> nome}}</p><br/>
 						<p>Horario da programacao: {{$programacao-> horario}}</p><br/>
 						
+						{{ Form::open(['url' => 'escalaradialista/store']) }}
+						{{ Form::hidden('idradialista', $radialista-> id) }}
+						{{ Form::hidden('idprogramacao', $programacao-> id) }}
 						
+						{{Form::submit('Escalar Radialista', ['class' => 'btn btn-primary'] )}}
+						
+						{{ Form::close() }}
 					@else
 						@if(Request::is("radialistas/edit/*"))
 							{{Form::model($radialista, [ 'method' => 'PATCH', 'url' => 'radialistas/update/'.$radialista->id])}}
