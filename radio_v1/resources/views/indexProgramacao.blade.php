@@ -17,31 +17,49 @@
                     <h2>Segunda-feira</h2><br/>
 					<table class="table">
 						<th>Nome</th>						
-						<th>Horário</th>	
+						<th>Horário</th>
+						<th>Radialista</th>
 						<th>Ações</th>
 						<tbody>
 							@forelse($programacaos as $programacao)
-							<?php $idprograma_programacao = $programacao -> idprograma; ?>
+								<?php $idprograma_programacao = $programacao -> idprograma; ?>
 								@foreach($programas as $programa)
 								<?php $idprograma = $programa -> id; ?>
 									@if($idprograma_programacao == $idprograma)
-										<?php $nome = $programa -> nome; ?>
+										<?php $nomeprograma = $programa -> nome; ?>
 										@break;
 									@endif
-								@endforeach
-							<tr>
-								<td>{{$nome}}</td>	
-								<td>{{$programacao -> horario}}</td>	
-								<td>								
-									<a href="programacao/edit/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Editar</a>									
-									<a href="escalaradialista/index/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>
-									{{ Form::open(['method'=>'DELETE', 'url' => 'programacao/destroy/'.$programacao-> id, 'style' => 'display: inline;']) }}
-									<button type="submit" class="btn btn-sm">Remover da Programação</button>		
-									{{ Form::close() }}
-								</td>									
-							</tr>
+								@endforeach					
+																
+								<tr>
+									<td>{{$nomeprograma}}</td>
+									<td>{{$programacao -> horario}}</td>
+									<td>
+										<?php $idprogramacao = $programacao -> id; ?>
+										@foreach($escalacao as $escala)	
+											<?php $idprogramacao_escala = $escala -> idprogramacao; ?>
+											@if($idprogramacao == $idprogramacao_escala)
+												<?php $idradialista_escala = $escala -> idradialista; ?>
+												@foreach($radialistas as $radialista)
+													<?php $idradialista = $radialista -> id; ?>
+													@if($idradialista_escala == $idradialista)
+														<?php $nomeradialista = $radialista -> nome; ?>
+														{{$nomeradialista }}
+													@endif
+												@endforeach
+											@endif
+										@endforeach
+									</td>										
+									<td>								
+										<a href="programacao/edit/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Editar</a>									
+										<a href="escalaradialista/index/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>
+										{{ Form::open(['method'=>'DELETE', 'url' => 'programacao/destroy/'.$programacao-> id, 'style' => 'display: inline;']) }}
+										<button type="submit" class="btn btn-sm">Remover da Programação</button>		
+										{{ Form::close() }}
+									</td>									
+								</tr>
 							@empty	
-							<p>Nenhum programa escalado!</p>							
+								<p>Nenhum programa escalado!</p>							
 							@endforelse
 						</tbody>
 					</table>

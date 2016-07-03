@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use DB;
 use App\Programacao;
 use App\Programa;
+use App\Radialista;
+use App\EscalaRadialistas;
 use Illuminate\Http\Request;
 use Redirect;
 
@@ -12,8 +14,10 @@ class ProgramacaoController extends Controller
     //lista programacao
 	public function getIndex(){
 		$programacaos = Programacao::get();	
-		$programas = Programa::get();			
-		return view('indexProgramacao', compact('programacaos', 'programas'));
+		$programas = Programa::get();
+		$radialistas = Radialista::get();
+		$escalacao = EscalaRadialistas::get();
+		return view('indexProgramacao', compact('programacaos', 'programas', 'radialistas', 'escalacao'));
 	}	
 	//formulário de criação 
 	public function getCreate($id){
