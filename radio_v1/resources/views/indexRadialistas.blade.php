@@ -23,7 +23,7 @@
 								<td>{{$radialista -> nome}}</td>								
 								<td>
 									@if(Request::is("radialistas/listar/*"))
-										<a href="radialistas/associar/{{$idprogramacao}}/{{$idprograma}}/{{$radialista->id}}" class="btn btn-default btn-sm">Adicionar a Programação</a>									
+										<a href="http://localhost/desafio_radio/radio_v1/public/radialistas/associar/{{$idprogramacao}}/{{$idprograma}}/{{$radialista->id}} " class="btn btn-default btn-sm">Adicionar a Programação</a>									
 									@endif
 									<a href="radialistas/edit/{{ $radialista-> id }}" class="btn btn-default btn-sm">Editar</a>
 									{{ Form::open(['method'=>'DELETE', 'url' => 'radialistas/destroy/'.$radialista-> id, 'style' => 'display: inline;']) }}

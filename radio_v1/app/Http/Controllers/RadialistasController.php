@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Radialista;
 use App\Programacao;
+use App\Programa;
 use Illuminate\Http\Request;
 use Redirect;
 
@@ -23,7 +24,7 @@ class RadialistasController extends Controller
 		$programa = Programa::findOrFail($idprograma);
 		$radialista = Radialista::findOrFail($idradialista);
 		return view('create-editRadialista', compact('programacao', 'programa', 'radialista'));
-		//return Redirect::to('radialistas/');
+		//return Redirect::to('radialistas/create', compact('programacao', 'programa', 'radialista'));
 	}
 	
 	//formulário de criação do radialista
