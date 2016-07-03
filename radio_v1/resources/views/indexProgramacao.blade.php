@@ -52,7 +52,8 @@
 																<?php $idradialista = $radialista -> id;?>														
 																@if($idradialista_escala == $idradialista)
 																	<?php $nomeradialista = $radialista -> nome;?>														
-																	{{$nomeradialista }}
+																	{{$nomeradialista }} 
+																	<a href="http://localhost/desafio_radio/radio_v1/public/escalaradialista/destroy/{{ $escala-> id }}" class="btn btn-default btn-sm">x</a>
 																	@break
 																@endif
 															@endforeach
@@ -60,8 +61,9 @@
 													@endforeach
 												</td>										
 												<td>								
-													<a href="programacao/edit/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Editar</a>									
-																							
+													<a href="programacao/edit/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Mover</a>									
+													<a href="http://localhost/desafio_radio/radio_v1/public/escalaradialista/index/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>	
+														
 													{{ Form::open(['method'=>'DELETE', 'url' => 'programacao/destroy/'.$programacao-> id, 'style' => 'display: inline;']) }}
 													<button type="submit" class="btn btn-sm">Remover da Programação</button>		
 													{{ Form::close() }}

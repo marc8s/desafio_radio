@@ -28,7 +28,7 @@ class EscalaRadialistasController extends Controller
 		\Session::flash('mensagem_sucesso', 'Radialista escalado na programacao!');		
 		return Redirect::to('programacao');
 	}	 
-	public function deleteDestroy($id){
+	public function getDestroy($id){
 		$escala = EscalaRadialistas::findOrFail($id);
 		$escala->delete();
 		\Session::flash('mensagem_sucesso', 'Radialista removido da programação!');

@@ -55,7 +55,7 @@ class ProgramacaoController extends Controller
 		$programacao->delete();
 		\Session::flash('mensagem_sucesso', 'Programa removido da programação!');
 		return Redirect::to('programacao');
-	}
+	}	
 	public function missingMethod($params = array()){
 		return view('erro404');
 	}
