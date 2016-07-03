@@ -32,10 +32,7 @@ class ProgramacaoController extends Controller
 		\Session::flash('mensagem_sucesso', 'Programação atualizada com sucesso!');		
 		return Redirect::to('programacao');
 	}
-	//mostra 
-	public function getShow($id){
-		return "Mostra a programacao -> {$id}";
-	}
+	
 	//carregar uma programacao pra edição
 	public function getEdit($id, $idprograma){
 		$programacao = Programacao::findOrFail($id);

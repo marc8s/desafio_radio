@@ -14,7 +14,7 @@ class RadialistasController extends Controller
 	public function getIndex(){
 		$radialistas = Radialista::get();			
 		return view('indexRadialistas', compact('radialistas'));
-	}	
+	}
 	
 	//formulário de criação do radialista
 	public function getCreate(){
@@ -27,10 +27,7 @@ class RadialistasController extends Controller
 		\Session::flash('mensagem_sucesso', 'Radialista cadastrado com sucesso!');		
 		return Redirect::to('radialistas/create');
 	}
-	//mostra um radialista especifico
-	public function getShow($id){
-		return "Mostra o radialista -> {$id}";
-	}
+	
 	//carregar um radialista especifico pra edição
 	public function getEdit($id){
 		$radialista = Radialista::findOrFail($id);		

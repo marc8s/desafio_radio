@@ -11,8 +11,7 @@ use Redirect;
 
 class EscalaRadialistasController extends Controller
 {
-    
-	//metodos para associar radialista a programa
+    	
 	public function getIndex($idprogramacao, $idprograma){		
 		$radialistas = Radialista::get();		
 		return view('indexRadialistas', compact('radialistas', 'idprogramacao', 'idprograma'));
@@ -28,9 +27,7 @@ class EscalaRadialistasController extends Controller
 		$escala = $escala -> create($request->all());		
 		\Session::flash('mensagem_sucesso', 'Radialista escalado na programacao!');		
 		return Redirect::to('programacao');
-	}
-	
-	//deletar um programa especifico 
+	}	 
 	public function deleteDestroy($id){
 		$escala = EscalaRadialistas::findOrFail($id);
 		$escala->delete();

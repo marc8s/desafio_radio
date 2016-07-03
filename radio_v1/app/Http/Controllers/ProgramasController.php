@@ -24,10 +24,7 @@ class ProgramasController extends Controller
 		\Session::flash('mensagem_sucesso', 'Programa cadastrado com sucesso!');		
 		return Redirect::to('programas/create');
 	}
-	//mostra um programa especifico
-	public function getShow($id){
-		return "Mostra o programa -> {$id}";
-	}
+	
 	//carregar um programa especifico pra edição
 	public function getEdit($id){
 		$programa = Programa::findOrFail($id);		
