@@ -39,8 +39,10 @@ class ProgramacaoController extends Controller
 	public function getEdit($id, $idprograma){
 		$programacao = Programacao::findOrFail($id);
 		$programa = Programa::findOrFail($idprograma);	
-		return view('create-editProgramacao', compact('programacao', 'programa'));		
-		//return view('create-editProgramacao', ['programacao' => $programacao]);
+		$escalacao = EscalaRadialistas::get();
+		$radialistas = Radialista::get();
+		return view('create-editProgramacao', compact('programacao', 'programa' , 'escalacao', 'radialistas'));		
+		
 	}
 	//alterar 
 	public function patchUpdate($id, Request $request){

@@ -30,4 +30,15 @@ class EscalaRadialistasController extends Controller
 		return Redirect::to('programacao');
 	}
 	
+	//deletar um programa especifico 
+	public function deleteDestroy($id){
+		$escala = EscalaRadialistas::findOrFail($id);
+		$escala->delete();
+		\Session::flash('mensagem_sucesso', 'Radialista removido da programação!');
+		return Redirect::to('programacao');
+	}
+	public function missingMethod($params = array()){
+		return view('erro404');
+	}
+	
 }

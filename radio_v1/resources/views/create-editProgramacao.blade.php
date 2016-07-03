@@ -21,7 +21,24 @@
 					
 					<p>Nome do programa: {{$programa-> nome}}</p><br/>
 					
-					<!--{{Form::input('text', 'idprograma', $programa-> id, ['class' => 'form-control'])}}-->
+					@foreach($escalacao as $escala)	
+						<?php 
+						$idprogramacao = $programacao -> id; 
+						$idprogramacao_escala = $escala -> idprogramacao; 
+						?>
+						@if($idprogramacao == $idprogramacao_escala)
+							<?php $idradialista_escala = $escala -> idradialista; ?>
+							@foreach($radialistas as $radialista)
+								<?php $idradialista = $radialista -> id;?>														
+								@if($idradialista_escala == $idradialista)
+									<?php $nomeradialista = $radialista -> nome;?>														
+									<p>Radialista: {{$nomeradialista }}</p><br/>
+									break;
+								@endif
+							@endforeach
+						@endif
+					@endforeach
+					
 					{{ Form::hidden('idprograma', $programa-> id) }}
 					
 					{{Form::label('dia', 'Dia')}}
