@@ -12,10 +12,16 @@ class EscalaRadialistasController extends Controller
 {
     
 	//associar a uma programacao
-	public function getIndex($idprogramacao){		
+	public function getIndex($idprogramacao, $idprograma){		
 		$radialistas = Radialista::get();		
-		return view('indexAssociarRadialista', compact('radialistas', 'idprogramacao'));
+		return view('indexAssociarRadialista', compact('radialistas', 'idprogramacao', 'idprograma'));
 	}
 	
+	public function getCreate($idprogramacao, $idprograma, $idradialista){		
+		$programacao = Programacao::findOrFail($idprogramacao);
+		$programa = Programa::findOrFail($idprograma);
+		$radialista = Radialista::findOrFail($idradialista);
+		return view('create-editAssociaRadialista', compact('programacao', 'programa', 'radialista'));
+	}
 	
 }

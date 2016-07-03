@@ -34,7 +34,7 @@
 								<td>{{$programacao -> horario}}</td>	
 								<td>								
 									<a href="programacao/edit/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Editar</a>									
-									<a href="escalaradialista/index/{{ $programacao-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>
+									<a href="radialistas/listar/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>
 									{{ Form::open(['method'=>'DELETE', 'url' => 'programacao/destroy/'.$programacao-> id, 'style' => 'display: inline;']) }}
 									<button type="submit" class="btn btn-sm">Remover da Programação</button>		
 									{{ Form::close() }}

@@ -13,19 +13,24 @@
 						<div class="alert alert-sucess">{{Session::get('mensagem_sucesso')}}</div>
 					@endif
 					
-					@if(Request::is("radialistas/edit/*"))
-						{{Form::model($radialista, [ 'method' => 'PATCH', 'url' => 'radialistas/update/'.$radialista->id])}}
+					@if(Request::is("radialistas/associar/*"))
+						<p>Nome do programa: {{$programa-> nome}}</p><br/>
+						<p>Nome do radialista: {{$radialista-> nome}}</p><br/>
+						<p>Horario da programacao: {{$programacao-> horario}}</p><br/>
 					@else
-						{{ Form::open(['url' => 'radialistas/store']) }}
-					@endif					
-					
-					{{Form::label('nome', 'Nome')}}
-					{{Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Radialista'])}}
-															
-					{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
+						@if(Request::is("radialistas/edit/*"))
+							{{Form::model($radialista, [ 'method' => 'PATCH', 'url' => 'radialistas/update/'.$radialista->id])}}
+						@else
+							{{ Form::open(['url' => 'radialistas/store']) }}
+						@endif					
 						
-					{{ Form::close() }}
-					
+						{{Form::label('nome', 'Nome')}}
+						{{Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Radialista'])}}
+																
+						{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
+							
+						{{ Form::close() }}
+					@endif
                 </div>
             </div>
         </div>
