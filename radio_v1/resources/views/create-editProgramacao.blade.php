@@ -20,35 +20,37 @@
 					@endif		
 					
 					<p>Nome do programa: {{$programa-> nome}}</p><br/>
-					
-					@foreach($escalacao as $escala)	
-						<?php 
-						$idprogramacao = $programacao -> id; 
-						$idprogramacao_escala = $escala -> idprogramacao; 
-						?>
-						@if($idprogramacao == $idprogramacao_escala)
-							<?php $idradialista_escala = $escala -> idradialista; ?>
-							@foreach($radialistas as $radialista)
-								<?php $idradialista = $radialista -> id;?>														
-								@if($idradialista_escala == $idradialista)
-									<?php $nomeradialista = $radialista -> nome;?>														
-									<p>Radialista: {{$nomeradialista }}</p>
-																	
-									@break
-								@endif
-							@endforeach
-						@endif
-					@endforeach
-					
+					@if(Request::is("programacao/edit/*"))
+						@foreach($escalacao as $escala)	
+							<?php 
+							$idprogramacao = $programacao -> id; 
+							$idprogramacao_escala = $escala -> idprogramacao; 
+							?>
+							@if($idprogramacao == $idprogramacao_escala)
+								<?php $idradialista_escala = $escala -> idradialista; ?>
+								@foreach($radialistas as $radialista)
+									<?php $idradialista = $radialista -> id;?>														
+									@if($idradialista_escala == $idradialista)
+										<?php $nomeradialista = $radialista -> nome;?>														
+										<p>Radialista: {{$nomeradialista }}</p>
+																		
+										@break
+									@endif
+								@endforeach
+							@endif
+						@endforeach
+					@endif
 					{{ Form::hidden('idprograma', $programa-> id) }}
 					
 					{{Form::label('dia', 'Dia')}}
 					{{Form::input('text', 'dia', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Dia do Programa'])}}
 					
 					{{Form::label('horario', 'Horario')}}
-					{{Form::input('text', 'horario', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Horario do Programa'])}}					
-					<a href="http://localhost/desafio_radio/radio_v1/public/escalaradialista/index/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>	
+					{{Form::input('text', 'horario', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Horario do Programa'])}}	
 					
+					@if(Request::is("programacao/edit/*"))
+						<a href="http://localhost/desafio_radio/radio_v1/public/escalaradialista/index/{{ $programacao-> id }}/{{ $programa-> id }}" class="btn btn-default btn-sm">Associar Radialista</a>	
+					@endif
 					{{Form::submit('salvar', ['class' => 'btn btn-primary'] )}}
 						
 					{{ Form::close() }}
